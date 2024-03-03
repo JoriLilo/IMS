@@ -1,6 +1,6 @@
 package CLIENT;
 
-import DAO.ProductRequest;
+import DTO.ProductRequest;
 
 import java.util.Scanner;
 
