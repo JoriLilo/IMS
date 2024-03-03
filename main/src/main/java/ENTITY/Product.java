@@ -7,6 +7,9 @@ import java.time.LocalDateTime;
 
 @Entity(name = "Product_table")
 public class Product {
+
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -28,7 +31,7 @@ public class Product {
     @CreationTimestamp()
     private LocalDateTime createdAt;
 
-    @Column(name = "updatet_at")
+    @Column(name = "updated_at")
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
@@ -54,5 +57,31 @@ public class Product {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Integer getQuantity() {
+        return null;
+    }
+
+    public void setDescription(String description) {
+    }
+
+    public void setQuantity(Integer quantity) {
+    }
+
+    public void setPrice(Double price) {
+    }
+
+    public void setTitle(String title) {
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", category=" + category +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
     }
 }

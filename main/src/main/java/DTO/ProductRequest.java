@@ -6,7 +6,8 @@ public class ProductRequest {
     private String description;
     private Integer quantity;
     private Double price;
-    private Integer category;
+    private Long category;
+
 
     public String getTitle() {
         return title;
@@ -40,11 +41,22 @@ public class ProductRequest {
         this.price = price;
     }
 
-    public Integer getCategory() {
+    public Long getCategory() {
         return category;
     }
 
-    public void setCategory(Integer category) {
+    public void setCategory(Long category) {
         this.category = category;
+    }
+
+    @Override
+    public String toString() {
+        return "ProductRequest{" +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                ", category=" + category +
+                '}';
     }
 }

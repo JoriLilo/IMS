@@ -1,12 +1,14 @@
 package CLIENT;
 
 import DTO.ProductRequest;
+import SERVICE.ProductService;
+import SERVICE.ProductServiceIMPL;
+import VALIDATOR.ProductValidator;
 
 import java.util.Scanner;
 
 
 public class InventoryManagementSystem {
-    public class InventoryManagementSystemsg {
 
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
@@ -18,22 +20,36 @@ public class InventoryManagementSystem {
             System.out.println("5 display all categories");
             int choice = sc.nextInt();
 
+
             switch (choice) {
                 case 1:
-                    //createproduct
+                    createProduct(sc);
                     break;
                 case 2:
-                    //displayAllProduct
+                    displayAllProducts();
+                    break;
+
+
             }
         }
 
-        public static void createProduct(Scanner scanner) {
+    private static void displayAllProducts() {
+    }
+
+    public static void createProduct(Scanner scanner) {
             ProductRequest productRequest = new ProductRequest();
             System.out.println("Vendosni emrin e produktit");
             productRequest.setTitle(scanner.next());
-
-            //productService.createProduct(productRequest)
+            System.out.println("Vendosni pershkrimin e produktit");
+            productRequest.setDescription(scanner.next());
+            System.out.println("Vendosni ID e kategorise");
+            productRequest.setCategory(scanner.nextLong());
+            System.out.println("Vendosni cmimin e produktit");
+            productRequest.setPrice(scanner.nextDouble());
+            System.out.println("Vendosni sasine e produktit");
+            productRequest.setQuantity(scanner.nextInt());
+            ProductService productService = new ProductServiceIMPL();
+            productService.createProduct(productRequest);
 
         }
-    }
 }
