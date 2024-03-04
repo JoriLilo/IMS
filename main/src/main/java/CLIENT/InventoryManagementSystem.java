@@ -25,7 +25,7 @@ public class InventoryManagementSystem {
             System.out.println("2, Display all products");
             System.out.println("3, Notify for low stock product");
             System.out.println("4, Add category");
-            System.out.println("5 display all categories");
+            System.out.println("5 Display all categories");
             int choice = sc.nextInt();
 
 
@@ -50,15 +50,15 @@ public class InventoryManagementSystem {
 
     public static void createProduct(Scanner scanner) {
         ProductRequest productRequest = new ProductRequest();
-        System.out.println("Vendosni emrin e produktit");
+        System.out.println("Name the Product");
         productRequest.setTitle(scanner.next());
-        System.out.println("Vendosni pershkrimin e produktit");
+        System.out.println("Description");
         productRequest.setDescription(scanner.next());
-        System.out.println("Vendosni ID e kategorise");
+        System.out.println("Category ID");
         productRequest.setCategory(scanner.nextLong());
-        System.out.println("Vendosni cmimin e produktit");
+        System.out.println("Product price");
         productRequest.setPrice(scanner.nextDouble());
-        System.out.println("Vendosni sasine e produktit");
+        System.out.println("Product quantity");
         productRequest.setQuantity(scanner.nextInt());
         ProductService productService = new ProductServiceIMPL();
         productService.createProduct(productRequest);
