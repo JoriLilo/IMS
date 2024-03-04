@@ -23,6 +23,8 @@ public class ProductServiceIMPL implements ProductService {
         for(Product product : products){
             if (product.getQuantity()<limitStock){
                 lowStock.add(product);
+                System.out.println("Produkti drejt mberimit");
+
             }
         }
         return lowStock;

@@ -1,40 +1,19 @@
-package ENTITY;
-import jakarta.persistence.*;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+package DTO;
 
 import java.time.LocalDateTime;
-@Entity
-public class Category {
-    public Category(){
 
-    }
-
-    public Category(Long id){
-        this.id = id;
-    }
-
-
-    @Id
-
-    private Long id;
+public class CategoryRequest {
+    private Long Id;
     private String title;
-
-    @Column(name = "createdAt")
-    @CreationTimestamp
     private LocalDateTime createdAt;
-
-    @Column(name = "updated_at")
-    @UpdateTimestamp
     private LocalDateTime updatedAt;
 
-
     public Long getId() {
-        return id;
+        return Id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        Id = id;
     }
 
     public String getTitle() {
@@ -59,5 +38,14 @@ public class Category {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    @Override
+    public String toString() {
+        return "CategoryRequest{" +
+                "title='" + title + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
     }
 }
