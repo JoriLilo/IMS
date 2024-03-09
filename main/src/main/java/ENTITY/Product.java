@@ -26,7 +26,44 @@ public class Product {
         this.category = category;
     }
 
-    //
+    private String Title;
+
+    private String Description;
+    private Integer Quantity;
+    private Long Price;
+
+    public String getTitle() {
+        return Title;
+    }
+
+    public void setTitle(String title) {
+        Title = title;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
+    }
+
+    public Integer getQuantity() {
+        return Quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        Quantity = quantity;
+    }
+
+    public Long getPrice() {
+        return Price;
+    }
+
+    public void setPrice(Long price) {
+        Price = price;
+    }
+
     @Column(name = "created_at")
     @CreationTimestamp()
     private LocalDateTime createdAt;
@@ -59,21 +96,6 @@ public class Product {
         this.updatedAt = updatedAt;
     }
 
-    public Integer getQuantity() {
-        return null;
-    }
-
-    public void setDescription(String description) {
-    }
-
-    public void setQuantity(Integer quantity) {
-    }
-
-    public void setPrice(Double price) {
-    }
-
-    public void setTitle(String title) {
-    }
 
     @Override
     public String toString() {

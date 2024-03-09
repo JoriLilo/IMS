@@ -44,7 +44,7 @@ public class ProductServiceIMPL implements ProductService {
 
     @Override
     public List<Product> findAll() {
-        return null;
+        return productDAO.findAll();
     }
 
 

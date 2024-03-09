@@ -45,6 +45,11 @@ public class InventoryManagementSystem {
         }
 
     private static void displayAllProducts() {
+        ProductService productService = new ProductServiceIMPL();
+        List<Product> getAllProducts = productService.findAll();
+        for (Product product:getAllProducts){
+            System.out.println(product);
+        }
     }
 
     public static void createProduct(Scanner scanner) {
@@ -56,7 +61,7 @@ public class InventoryManagementSystem {
         System.out.println("Category ID");
         productRequest.setCategory(scanner.nextLong());
         System.out.println("Product price");
-        productRequest.setPrice(scanner.nextDouble());
+        productRequest.setPrice(scanner.nextLong());
         System.out.println("Product quantity");
         productRequest.setQuantity(scanner.nextInt());
         ProductService productService = new ProductServiceIMPL();

@@ -5,7 +5,7 @@ public class ProductRequest {
 
     private String description;
     private Integer quantity;
-    private Double price;
+    private Long price;
     private Long category;
 
 
@@ -33,11 +33,11 @@ public class ProductRequest {
         this.quantity = quantity;
     }
 
-    public Double getPrice() {
+    public Long getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(Long price) {
         this.price = price;
     }
 
