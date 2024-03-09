@@ -28,7 +28,6 @@ public class InventoryManagementSystem {
             System.out.println("5 Display all categories");
             int choice = sc.nextInt();
 
-
             switch (choice) {
                 case 1:
                     createProduct(sc);
@@ -65,9 +64,7 @@ public class InventoryManagementSystem {
     }
 
     public static void notifyLowStock(){
-            ProductServiceIMPL productServiceIMPL= new ProductServiceIMPL();
-            productServiceIMPL.notifyLowStock();
-        System.out.println(productServiceIMPL);
+
 
     }
 
