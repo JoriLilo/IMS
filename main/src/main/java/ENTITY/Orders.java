@@ -8,14 +8,15 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Entity(name = "orders_table")
-public class Order {
+@Entity
+@Table(name = "orders")
+public class Orders {
 
     @ManyToOne
     @JoinColumn(name = "client_id")
     private Client client;
 
-    @OneToMany(mappedBy = "orders_table")
+    @OneToMany(mappedBy = "orders")
     private List<OrderItems> orderItemsList;
 
     private Double total;
@@ -29,7 +30,6 @@ public class Order {
 
     @Enumerated(EnumType.STRING)
     @Column(name = " order_status")
-    @ColumnDefault("NEW")
     private OrderStatusEnum orderStatusEnum;
 
 

@@ -5,14 +5,24 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
-@Entity(name = "Product_table")
+@Entity
+@Table(name = "Product_table")
 public class Product {
 
-
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    public Product(Long id) {
+        this.id = id;
+
+    }
+    public Product() {
+
+
+    }
+
+
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "category_id", nullable = false)
@@ -30,7 +40,7 @@ public class Product {
 
     private String Description;
     private Integer Quantity;
-    private Long Price;
+    private Double Price;
 
     public String getTitle() {
         return Title;
@@ -56,11 +66,11 @@ public class Product {
         Quantity = quantity;
     }
 
-    public Long getPrice() {
+    public Double getPrice() {
         return Price;
     }
 
-    public void setPrice(Long price) {
+    public void setPrice(Double price) {
         Price = price;
     }
 

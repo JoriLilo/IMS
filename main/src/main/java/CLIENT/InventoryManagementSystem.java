@@ -61,7 +61,7 @@ public class InventoryManagementSystem {
         System.out.println("Category ID");
         productRequest.setCategory(scanner.nextLong());
         System.out.println("Product price");
-        productRequest.setPrice(scanner.nextLong());
+        productRequest.setPrice(scanner.nextDouble());
         System.out.println("Product quantity");
         productRequest.setQuantity(scanner.nextInt());
         ProductService productService = new ProductServiceIMPL();

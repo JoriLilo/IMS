@@ -1,6 +1,5 @@
 package config;
-import ENTITY.Category;
-import ENTITY.Product;
+import ENTITY.*;
 import lombok.Getter;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -12,6 +11,9 @@ public class HibernateConfig {
             return new Configuration().configure("hibernate.cfg.xml")
                     .addAnnotatedClass(Category.class)
                     .addAnnotatedClass(Product.class)
+                    .addAnnotatedClass(Orders.class)
+                    .addAnnotatedClass(OrderItems.class)
+                    .addAnnotatedClass(Client.class)
                     .buildSessionFactory();
         }catch (ExceptionInInitializerError eiie) {
             System.out.println(eiie.getLocalizedMessage());

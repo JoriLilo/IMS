@@ -33,4 +33,7 @@ public class OrderRequest {
     public void setOrderItemRequests(List<OrderItemRequest> orderItemRequests) {
         this.orderItemRequests = orderItemRequests;
     }
+
+    public void setOrderItemsRequestList(List<OrderItemRequest> orderItemsRequestList) {
+    }
 }

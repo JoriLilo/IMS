@@ -6,7 +6,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 
-@Entity(name = "order_items")
+@Entity(name = "orders_items")
 public class OrderItems {
 
 
@@ -23,6 +23,10 @@ public class OrderItems {
     private LocalDateTime updatedAt;
 
     private Integer quantity;
+
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private Orders orders;
     @ManyToOne
     @JoinColumn(name = " product_id")
     private Product product;
@@ -75,5 +79,13 @@ public class OrderItems {
 
     public void setSubTotal(Double subTotal) {
         this.subTotal = subTotal;
+    }
+
+    public Orders getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Orders orders) {
+        this.orders = orders;
     }
 }

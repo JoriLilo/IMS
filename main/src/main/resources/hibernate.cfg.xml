@@ -22,9 +22,7 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hibernate.hbm2ddl.auto">update</property>
         <!-- Mention annotated class -->
-        <mapping class="entity.Order"/>
-        <mapping class="entity.OrderItems"/>
-        <mapping class="entity.Client"/>
+
 
 
     </session-factory>

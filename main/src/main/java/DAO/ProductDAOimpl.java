@@ -4,6 +4,8 @@ import ENTITY.Product;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
 
 import java.util.List;
 
@@ -31,6 +33,14 @@ public class ProductDAOimpl implements ProductDAO{
     }
 
     @Override
+    public List<Product> findAllByIds(List<Long> ids) {
+        Session session=sessionFactory.openSession();
+        Query<Product> query = session.createQuery("from Product where id in (:ids)" ,Product.class);
+        query.setParameter("ids",ids);
+        return query.getResultList();
+    }
+
+    @Override
     public Product findByID(Long id) {
         return null;
     }
@@ -38,6 +48,6 @@ public class ProductDAOimpl implements ProductDAO{
     @Override
     public List<Product> findAll() {
         Session session=sessionFactory.openSession();
-        return session.createQuery("SELECT a FROM Product_table a", Product.class).getResultList();
+        return session.createQuery("SELECT a FROM Product a", Product.class).getResultList();
     }
 }
