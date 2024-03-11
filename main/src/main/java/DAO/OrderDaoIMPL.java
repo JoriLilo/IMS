@@ -17,12 +17,13 @@ public class OrderDaoIMPL implements OrderDao{
     @Override
     public Orders create(Orders orders) {
 
+            try (Session session = sessionFactory.openSession()) {
+                Transaction transaction = session.beginTransaction();
+                session.save(orders);
+                transaction.commit();
+                return orders;
+            }
 
-        try (Session session = sessionFactory.openSession()){
-            Transaction transaction = session.beginTransaction();
-            Orders response = (Orders) session.save(orders);
-            transaction.commit();
-            return response;
-        }
+
     }
 }

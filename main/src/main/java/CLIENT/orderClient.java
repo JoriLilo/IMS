@@ -22,15 +22,17 @@ public class orderClient {
         List<OrderItemRequest> orderItemsRequestList = new ArrayList<>();
         int c;
         do {
-            System.out.println("Ju lutem fusni product ID, fusni product id = 300 kur ");
-            Long productId = sc.nextLong();
-            System.out.println("Ju lutem fusni sasine per kte product");
-            Integer quantity = sc.nextInt();
-            OrderItemRequest orderItemsRequest = new OrderItemRequest();
-            orderItemsRequestList.add(orderItemsRequest);
-            System.out.println("Ju lutem shtypni 1 per te vazhduar te shtoni produkte" +
-                    " dhe 0 nese lista e produkteve eshte plotesuar ");
-            c = sc.nextInt();
+                System.out.println("Ju lutem fusni product ID, fusni product id = 300 kur ");
+                Long productId = sc.nextLong();
+                System.out.println("Ju lutem fusni sasine per kte product");
+                Integer quantity = sc.nextInt();
+                OrderItemRequest orderItemsRequest = new OrderItemRequest();
+                orderItemsRequest.setProductId(productId);
+                orderItemsRequest.setQuantity(quantity);
+                orderItemsRequestList.add(orderItemsRequest);
+                System.out.println("Ju lutem shtypni 1 per te vazhduar te shtoni produkte" +
+                       " dhe 0 nese lista e produkteve eshte plotesuar ");
+                c = sc.nextInt();
         } while (c != 0);
         OrderRequest orderRequest = new OrderRequest();
         orderRequest.setClientId(clientId);
